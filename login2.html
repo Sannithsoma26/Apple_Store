@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Login Form</title>
+  <link rel="stylesheet" href="styles.css">
+ 
+</head>
+<body>
+  <div class="wrapper">
+  <script>
+  function call(thisform)
+  {
+  var name=thisform.username.value;
+  var pass=thisform.password.value;
+  var c=thisform.check.checked;
+  var x=/^[a-zA-Z0-9]{1,}\@gmail\.com$/;
+  var y=/^[a-zA-z0-9]{1,}$/;
+  if(name==" ")
+  {
+  alert("enter username");
+  return false;
+  }
+  if(pass==" ")
+  {
+  alert("enter password");
+  return false;
+  }
+  if(!(x.test(name)))
+  {
+ alert("Invalid username");
+ thisform.username.focus();
+ return false;
+  }
+  if(!c)
+  {
+  alert("please click the check box");
+  return false;
+  }
+  if(!(y.test(pass)))
+  {
+  alert("Invalid password");
+  return false;
+  }
+  
+  return true;
+  }
+  </script>
+    <form name="form1" action="appleproject2.html" onsubmit="return call(this)" method="post">
+      <h1>Login</h1>
+      <div class="input-box">
+        <input type="text"  name="username" placeholder="Username" required>
+        <i class='bx bxs-user'></i>
+      </div>
+      <div class="input-box">
+        <input type="password" name="password" placeholder="Password" required>
+        <i class='bx bxs-lock-alt' ></i>
+      </div>
+      <div class="remember-forgot">
+        <label><input type="checkbox" name="check">Remember Me</label>
+        <a href="#">Forgot Password</a>
+      </div>
+      <button type="submit" class="btn">Login</button>
+      <div class="register-link">
+        <p>Dont have an account? <a href="#">Register</a></p>
+      </div>
+    </form>
+  </div>
+  
+</body>
+</html>
